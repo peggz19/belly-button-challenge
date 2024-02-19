@@ -7,7 +7,7 @@ d3.json(url).then(function(data) {
     // loading the data to take a peek at what's in our json file
     console.log(jsondata)
   
-    // first I create an  initializing function for the first id
+    // first I create an initializing function for the first id containing the 2 graphs and the Demograpich info
 
     function init() {
         // BAR CHART
@@ -36,17 +36,19 @@ d3.json(url).then(function(data) {
         // Displaying the plot
         Plotly.newPlot('bar',trace1)
         Plotly.newPlot('bubble',trace2)
+
+        //Displaying the Demographic info A.K.A metadata
+        d3.select('#sample-metadata.card-body').append().html(`id : ${jsondata.metadata[0].id}<br>`)
+        d3.select('#sample-metadata.card-body').append().html(`ethnicity : ${jsondata.metadata[0].ethnicity}<br>`)
+        d3.select('#sample-metadata.card-body').append().html(`gender : ${jsondata.metadata[0].gender}<br>`)
+        d3.select('#sample-metadata.card-body').append().html(`age : ${jsondata.metadata[0].age}<br>`)
+        d3.select('#sample-metadata.card-body').append().html(`location : ${jsondata.metadata[0].location}<br>`)
+        d3.select('#sample-metadata.card-body').append().html(`bbtype : ${jsondata.metadata[0].bbtype}<br>`)
+        d3.select('#sample-metadata.card-body').append().html(`wfreq : ${jsondata.metadata[0].wfreq}<br>`)
     }
     init()
 
-    //Displaying the Demographic info A.K.A metadata
-    d3.select('#sample-metadata.card-body').append().html(`id : ${jsondata.metadata[0].id}<br>`)
-    d3.select('#sample-metadata.card-body').append().html(`ethnicity : ${jsondata.metadata[0].ethnicity}<br>`)
-    d3.select('#sample-metadata.card-body').append().html(`gender : ${jsondata.metadata[0].gender}<br>`)
-    d3.select('#sample-metadata.card-body').append().html(`age : ${jsondata.metadata[0].age}<br>`)
-    d3.select('#sample-metadata.card-body').append().html(`location : ${jsondata.metadata[0].location}<br>`)
-    d3.select('#sample-metadata.card-body').append().html(`bbtype : ${jsondata.metadata[0].bbtype}<br>`)
-    d3.select('#sample-metadata.card-body').append().html(`wfreq : ${jsondata.metadata[0].wfreq}<br>`)
+
     // Creating the EVENT SHIFTING function
     function optionChanged() {
         let dataset = d3.select('#selDataset').property('value')

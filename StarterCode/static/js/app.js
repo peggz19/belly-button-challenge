@@ -53,7 +53,7 @@ d3.json(url).then(function(data) {
     for (i=0;i<jsondata.names.length;i++){
         list.push(jsondata.names[i])
     }
-    // The codes starting with the below line are from ChatGPT. It was used to create option tags and values for the dropdown button
+    // The code starting with the below line is from ChatGPT. It was used to create option tags and values for the dropdown button
     // in the html file. It caused me to remove the orginal function onchange="optionChanged(this.value)" that was inside de select tag.
     
     // Select the <select> element with the dropdown menu

@@ -74,7 +74,7 @@ d3.json(url).then(function(data) {
         // we can find that index based on the selected value and then put it in my function which is working using indexes.
         if (dataset== this.value){
             index = list.indexOf(this.value)
-            console.log(index) // just to check if the index found is correct.
+            //console.log(index) 
             function modify() {
                 // BAR CHART
                 let trace1 = [{

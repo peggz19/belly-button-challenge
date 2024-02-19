@@ -49,13 +49,21 @@ d3.json(url).then(function(data) {
     init()
 
 
-    // Creating the EVENT SHIFTING function
-    function optionChanged() {
-        let dataset = d3.select('#selDataset').property('value')
-        for ( i=0;i<jsondata.samples.lenght;i++){
-            if (dataset = jsdondata.samples[i]){
-
-            }
-        }
+   // Before creating the event shifting option, I am creating a list with all the ids using a for loop
+    var list = [];
+    for (i=0;i<jsondata.names.length;i++){
+        list.push(jsondata.names[i])
     }
+    // The rest of the code is from ChatGPT 
+    // Select the <select> element with the dropdown menu
+    var select = d3.select("#selDataset");
+
+  // Bind data and create options tag for each id
+    var options = select.selectAll("option").data(list).enter().append("option").text(function(d) { return d; });
+
+  // Set values for the options
+  options.attr("value", function(d) { return d; });
+  // The ChatGPT code stops here
+
+  // Now we can use a function that goes through our dropdown l
 })

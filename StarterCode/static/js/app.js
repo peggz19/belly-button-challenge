@@ -39,12 +39,21 @@ d3.json(url).then(function(data) {
     }
     init()
 
-
     //Displaying the Demographic info A.K.A metadata
-
-
+    d3.select('#sample-metadata.card-body').append().html(`id : ${jsondata.metadata[0].id}<br>`)
+    d3.select('#sample-metadata.card-body').append().html(`ethnicity : ${jsondata.metadata[0].ethnicity}<br>`)
+    d3.select('#sample-metadata.card-body').append().html(`gender : ${jsondata.metadata[0].gender}<br>`)
+    d3.select('#sample-metadata.card-body').append().html(`age : ${jsondata.metadata[0].age}<br>`)
+    d3.select('#sample-metadata.card-body').append().html(`location : ${jsondata.metadata[0].location}<br>`)
+    d3.select('#sample-metadata.card-body').append().html(`bbtype : ${jsondata.metadata[0].bbtype}<br>`)
+    d3.select('#sample-metadata.card-body').append().html(`wfreq : ${jsondata.metadata[0].wfreq}<br>`)
     // Creating the EVENT SHIFTING function
     function optionChanged() {
+        let dataset = d3.select('#selDataset').property('value')
+        for ( i=0;i<jsondata.samples.lenght;i++){
+            if (dataset = jsdondata.samples[i]){
 
+            }
+        }
     }
 })

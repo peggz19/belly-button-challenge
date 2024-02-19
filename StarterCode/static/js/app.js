@@ -9,7 +9,6 @@ d3.json(url).then(function(data) {
       
     // first I create an initializing function for the first id containing the 2 graphs and the Demograpich info
     // this function will then be copied and pasted then modified
-    // I believe the function is not really necessary but just for the sake of not opening an empty page, I created it.
     function init() {
         // BAR CHART
         let trace1 = [{
